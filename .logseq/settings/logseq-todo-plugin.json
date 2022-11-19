@@ -1,0 +1,11 @@
+{
+  "hotkey": "mod+shift+t",
+  "whereToPlaceNewTask": "",
+  "openInRightSidebar": false,
+  "sectionTitleColor": "#106ba3",
+  "lightPrimaryBackgroundColor": "#ffffff",
+  "lightSecondaryBackgroundColor": "#f7f7f7",
+  "darkPrimaryBackgroundColor": "#023643",
+  "darkSecondaryBackgroundColor": "#002B37",
+  "disabled": false
+}

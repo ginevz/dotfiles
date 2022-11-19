@@ -1,0 +1,9 @@
+{
+  "disabled": false,
+  "inboxName": "#inbox",
+  "invertMessagesOrder": false,
+  "addTimestamp": false,
+  "authorizedUsers": [],
+  "pollingInterval": 60000,
+  "inboxByChat": []
+}

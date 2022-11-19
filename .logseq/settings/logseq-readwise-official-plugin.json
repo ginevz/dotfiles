@@ -1,0 +1,32 @@
+{
+  "isLoadAuto": true,
+  "isResyncDeleted": false,
+  "frequency": "60",
+  "disabled": false,
+  "lastSyncFailed": false,
+  "currentSyncStatusID": 0,
+  "readwiseAccessToken": "cHZkw5s2p9aHH47hKeaTzVDJ3b3SyteFGMbv1QupIytqPHv52r",
+  "currentGraph": {
+    "url": "logseq_local_/Users/ginzhu/Library/Mobile Documents/com~apple~CloudDocs/PKM",
+    "name": "PKM",
+    "path": "/Users/ginzhu/Library/Mobile Documents/com~apple~CloudDocs/PKM"
+  },
+  "booksIDsMap": {
+    "The Software Engineering Manager Interview Guide (highlights)": 19381165,
+    "I Spend $100k + a Year O... (highlights)": 18005399,
+    "This Is How You Find #Cr... (highlights)": 18705953,
+    "About Us - Reinventing B2B Payments | Paystand (highlights)": 19385024,
+    "Disciplined Entrepreneurship (highlights)": 19432186,
+    "Tweets From Stepan Hlinka (highlights)": 19985363,
+    "This Took Me 5 Years To... (highlights)": 19985366,
+    "POV: You Want to Buy a C... (highlights)": 20182636,
+    "Is It Possible to Be a Part Time Co-Founder? | Sprout Asia (highlights)": 20245893,
+    "How to Split Equity Amongst Founders? ( (highlights)": 20268496,
+    "How to Make It in #Crypt... (highlights)": 20389509,
+    "If You Want to Give Your... (highlights)": 20444608,
+    "The First 90 Days (highlights)": 20480224,
+    "Recommended Books | Zero to Mastery Academy (highlights)": 20495011,
+    "AWS Skill Builder (highlights)": 20536319
+  },
+  "lastSavedStatusID": 6181200
+}
