@@ -10,8 +10,8 @@
 6. Login to 1Password download id_rsa and id_rsa.pub and move them to ~/.ssh/~
 7. Also download the GPG public and private keys and import them into the GPG keychain: `gpg --import private.key gpg --import public.key`
 8. Test committing, if it fails follow this guide:
-8.1 GIT_TRACE=1 git commit -am_
-8.2 echo dummy | gpg -bsau {KEY}
-8.3 enter passphrase
+    8.1 GIT_TRACE=1 git commit -am_
+    8.2 echo dummy | gpg -bsau {KEY}
+    8.3 enter passphrase
 9. Install all asdf bins
 10. Import HC infra access keys (1P vault) to aws-vault keychain: `aws-vault login helecloud-zhu`
