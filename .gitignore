@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+
+Thumbs.db
+.idea
+
+.env
+.envrc
+
+.tool-versions

@@ -1,0 +1,32 @@
+{
+  "profiles": {
+    "personal": [
+      {
+        "key": "user.name",
+        "value": "Zhulian Ginev"
+      },
+      {
+        "key": "user.email",
+        "value": "zhginev@gmail.com"
+      },
+      {
+        "key": "user.signingkey",
+        "value": "E764473F56BAC052"
+      }
+    ],
+    "work": [
+      {
+        "key": "user.name",
+        "value": "Zhulian Ginev"
+      },
+      {
+        "key": "user.email",
+        "value": "zhulian.ginev@softwareone.com"
+      },
+      {
+        "key": "user.signingkey",
+        "value": "E764473F56BAC052"
+      }
+    ]
+  }
+}
