@@ -35,3 +35,9 @@ export GPG_TTY=$TTY
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# LS Colorized madness
+export LS_COLORS="$(vivid generate ayu)"
+
+# aws-vault
+AWS_VAULT_PROMPT='osascript'

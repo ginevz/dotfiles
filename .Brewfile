@@ -51,6 +51,7 @@ brew "telnet"
 brew "tmux"
 brew "tree"
 brew "vim"
+brew "k9s"
 brew "wget"
 brew "zplug"
 brew "zsh"
@@ -58,6 +59,10 @@ brew "zsh-syntax-highlighting"
 brew "dotzero/tap/git-profile"
 brew "romkatv/powerlevel10k/powerlevel10k"
 brew "thecasualcoder/stable/tf-summarize"
+brew "lsd"
+brew "vivid"
+brew "awscli"
+brew "aws-vault"
 cask "1password"
 cask "1password-cli"
 cask "busycal"
@@ -66,6 +71,7 @@ cask "raycast"
 cask "docker"
 # Team comm software
 cask "slack"
+cask "steam"
 cask "google-drive"
 # Screenshot measurement and annotation tool
 cask "shottr"
@@ -101,12 +107,15 @@ cask "spotify"
 cask "raindropio"
 # WebKit based web browser
 cask "orion"
+cask "openinterminal"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
 # Wallet desktop application to maintain multiple cryptocurrencies
 cask "ledger-live"
+cask "microsoft-teams"
 # Grammarly for desktop
 cask "grammarly-desktop"
+cask "intune-company-portal"
 # Mac App Store Installs
 mas "CopyClip", id: 595191960
 # mas "Dropzone 4", id: 1485052491

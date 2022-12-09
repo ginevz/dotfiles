@@ -10,6 +10,10 @@ zstyle ':z4h:' auto-update      'ask'
 # Ask whether to auto-update this often; has no effect if auto-update is 'no'.
 zstyle ':z4h:' auto-update-days '28'
 
+# Zsh to use the same colors as ls
+# export LS_COLORS="di=34;40:ln=36;40:so=35;40:pi=33;40:ex=32;40:bd=1;33;40:cd=1;33;40:su=0;41:sg=0;43:tw=0;42:ow=34;40:"
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # Keyboard type: 'mac' or 'pc'.
 zstyle ':z4h:bindkey' keyboard  'mac'
 
@@ -62,12 +66,12 @@ path=(~/bin $path)
 
 # Source additional local files if they exist.
 z4h source ~/.env.zsh
+z4h source ~/.alias.zsh
 
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # This is just an example that you should delete. It does nothing useful.
-z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
-z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+# z4h load ohmyzsh/ohmyzsh/plugins/aws  # load a plugin
 
 # Define key bindings.
 z4h bindkey undo Ctrl+/   Shift+Tab  # undo the last command line change
@@ -86,18 +90,7 @@ function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories md
 
 # Define named directories: ~w <=> Windows home directory on WSL.
-[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
-
-# Define aliases.
-alias tree='tree -a -I .git'
-
-# Add flags to existing aliases.
-# alias ls="${aliases[ls]:-ls} -A"
-alias ls='ls -GFh'
-alias cat='bat'
-alias vim='nvim'
-alias vi='nvim'
-alias profile='git-profile use'
+# [[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
 
 # Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
 setopt glob_dots     # no special treatment for file names with a leading dot
@@ -114,5 +107,61 @@ bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
+source <(kubectl completion zsh)
+
 # ASDF Required config
 source $(brew --prefix asdf)/libexec/asdf.sh
+
+# Enable fuzzy search for loading AWS Profiles
+source ~/.aws/fzf_zsh_aws_profile
+
+# asdf all in package installation
+aai() {
+  echo "Adding $1 plugin..."
+  asdf plugin add $1 2>/dev/null
+  if [[ "$#" -eq 1 ]]
+  then
+      read "continue?Only one argument passed. Press y to continue with LATEST version, n to select a new version, or exit to exit. "
+      case $continue in
+      y)
+          echo -n "Continuing with LATEST version.\n"
+          asdf install $1 latest
+          asdf global $1 latest
+          echo "$1 $2 configured on the system successfully."
+          ;;
+      n)
+          echo -n "Printing all $1 versions..."
+          asdf list all $1
+          read "version?Select a version from the printed list: "
+          asdf install $1 $version
+          asdf global $1 $version
+          echo "$1 $2 configured on the system successfully."
+          ;;
+      *)
+          echo -n "Exiting script.."
+      esac
+  elif [[ "$#" -eq 2 ]]
+  then
+      read "continue?The requested $1 version is $2. Press y to confirm, n to select a new version, or exit to exit. "
+      case $continue in
+      y)
+          echo -n "Continuing with $2 version...\n"
+          asdf install $1 $2
+          asdf global $1 $2
+          echo "$1 $2 configured on the system successfully."
+          ;;
+      n)
+          echo -n "Printing all $1 versions..."
+          asdf list all $1
+          read "version?Select a version from the printed list: "
+          asdf install $1 $version
+          asdf global $1 $version
+          echo "$1 $2 configured on the system successfully."
+          ;;
+      *)
+          echo -n "Exiting script.."
+      esac
+  else
+    echo "usage: aai <name> <version>. Version defaults to latest. Type apla to see all plugins."
+  fi
+}

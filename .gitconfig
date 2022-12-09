@@ -103,7 +103,7 @@
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/ginzhu/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -227,7 +227,7 @@
 
 [user]
 	name = Zhulian Ginev
-	email = zhginev@gmail.com
+	email = zhulian.ginev@softwareone.com
 	signingkey = E764473F56BAC052
 [color "diff-highlight"]
 	oldNormal = red bold
